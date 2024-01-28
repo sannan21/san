@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Drag & Drop Using JavaScript - Easy Tutorials</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div class="flowchart">Flow Chart </div>
+
+
+    <div class="container">
+   
+        <div id="arw">
+
+            <div class="ar" draggable="true"><span class="arr">&#8595;</span>
+
+            </div>
+            <div class="ar" draggable="true"><span class="arr">&#8595;</span>
+
+            </div>
+            <div class="ar" draggable="true"><span class="arr">&#8595;</span>
+
+            </div>
+            <div class="ar" draggable="true"><span class="arr">&#8595;</span>
+
+            </div>
+
+
+        </div>
+        <div id="left">
+
+            <div class="list" draggable="true">
+                <input type="text" id="fname" name="fname"><br><br>
+            </div>
+            <div class="list" draggable="true">
+                <input type="text" id="fname" name="fname"><br><br>
+            </div>
+            <div class="list" draggable="true">
+                <input type="text" id="fname" name="fname"><br><br>
+            </div>
+            <div class="list" draggable="true">
+                <input type="text" id="fname" name="fname"><br><br>
+            </div>
+
+
+        </div>
+
+        <div id="right"><div class="drag">Drag here</div> </div>
+
+    </div>
+</body>
+
+
+<script>
+
+
+
+    let lists = document.getElementsByClassName("list");
+
+    let rightBox = document.getElementById("right");
+
+    let leftBox = document.getElementById("left");
+
+    for (list of lists) {
+
+        list.addEventListener("dragstart", function (e) {
+
+            let selected = e.target;
+
+            rightBox.addEventListener("dragover", function (e) {
+                e.preventDefault();
+
+            });
+
+            rightBox.addEventListener("drop", function (e) {
+
+                rightBox.appendChild(selected);
+
+
+
+                selected = null;
+
+            });
+
+            leftBox.addEventListener("dragover", function (e) {
+                e.preventDefault();
+
+            });
+
+            leftBox.addEventListener("drop", function (e) {
+
+                leftBox.appendChild(selected);
+
+                selected = null;
+
+            });
+
+
+
+
+
+
+        })
+    }
+
+
+
+    let listss = document.getElementsByClassName("ar");
+
+    let rightBoxs = document.getElementById("right");
+
+    let leftBoxs = document.getElementById("arw");
+
+    for (lis of listss) {
+
+        lis.addEventListener("dragstart", function (e) {
+
+            let selected = e.target;
+
+            rightBoxs.addEventListener("dragover", function (e) {
+                e.preventDefault();
+
+            });
+
+            rightBoxs.addEventListener("drop", function (e) {
+
+                rightBoxs.appendChild(selected);
+
+
+
+                selected = null;
+
+            });
+
+            leftBoxs.addEventListener("dragover", function (e) {
+                e.preventDefault();
+
+            });
+
+            leftBoxs.addEventListener("drop", function (e) {
+
+                leftBoxs.appendChild(selected);
+
+                selected = null;
+
+            });
+
+
+
+
+
+
+        })
+    }
+
+
+</script>
+
+
+</html>
